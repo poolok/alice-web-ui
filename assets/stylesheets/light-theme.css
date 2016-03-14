@@ -5783,10 +5783,11 @@ div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
   color: #924e31; }
 .contrast-brown .dd-placeholder {
   border-color: #924e31; }
-/*.table {
+/**/
+.table {
   table-layout: fixed;
 }
-*/
+
 .table th, .table td {
   text-align: center;
 }
