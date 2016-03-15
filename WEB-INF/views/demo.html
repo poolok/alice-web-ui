@@ -136,11 +136,15 @@
                     "targets": [0,1,2], // 目标列位置，下标从0开始
                     "render": function(data, type, full) { // 返回自定义内容
                         var s = data.length>32?data.substr(0, 32) + "...":data;
-                        return "<span class='has-tooltip' data-placement='right' data-title='"+data+"'>" + s + "</span>";
+                        return "<span class='has-tooltip' data-toggle='popover' data-placement='right' data-content='"+data+"'>" + s + "</span>";
                     }
                 }],
             "initComplete": function(settings, json) {
-                $(".has-tooltip").tooltip();
+                $(".has-tooltip").popover({
+                    container: 'body',
+                    trigger:'hover',
+                    animation:true
+                });
             }
         });
     });
