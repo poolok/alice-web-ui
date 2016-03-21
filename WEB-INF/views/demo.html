@@ -37,18 +37,18 @@
 
     <div class="row-fluid" style="padding: 10px;">
         <h2>弄个表格来玩玩 <span data-title='jQuery dataTables使用的时候,返回json数据填充,不能进行分页,...jQuery dataTables使用的时候' id="tipDemo" style="color: green;">提示插件</h2>
-
-        <div class="row">
-            <table id="example" class="table table-bordered table-hover table-striped"
-                   style="margin-bottom:0;">
-                <thead>
-                <tr>
-                    <th style="width: 120px;">登录账号</th>
-                    <th style="width: 120px;">真实姓名</th>
-                    <th style="width: 120px;">出生年月</th>
-                </tr>
-                </thead>
-            </table>
+            <div class="box box-bordered">
+                <table id="example" class="table table-bordered table-hover table-striped"
+                       style="margin-bottom:0;">
+                    <thead>
+                    <tr>
+                        <th style="width: 120px;">登录账号</th>
+                        <th style="width: 120px;">真实姓名</th>
+                        <th style="width: 120px;">出生年月</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -98,8 +98,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var languageZh = {
-            'loadingRecords': '加载中...',
-            'processing': '查询中...',
+            "sProcessing":"<div class='dt_inner'><i class='icon-2x icon-spinner icon-spin'></i> 加载中...</div>",
             "sLengthMenu": "每页显示 _MENU_ 条记录",
             "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条",
             "sInfoEmpty": "没有数据",
@@ -120,6 +119,7 @@
             "bAutoWidth": false,
             "searching": false,
             "scrollY": "300px",
+            "scrollX" : "300px",
             "paging": true,//分页
             "ordering": false,//是否启用排序
             "oLanguage": languageZh,
@@ -145,9 +145,12 @@
                     trigger:'hover',
                     animation:true
                 });
+                $(".dataTables_wrapper .row-fluid:first .span6").remove();
+                $(".dataTables_wrapper .row-fluid:eq(2)").css("margin-top","5px");
             }
         });
     });
 </script>
+<div class='dt_inner'><i class='icon-2x icon-spinner icon-spin'></i> 加载中...</div>
 </body>
 </html>
